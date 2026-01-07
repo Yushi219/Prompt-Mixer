@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "appName": "Prompt Mixer",
+  "categories": [
+    {
+      "id": "preserve",
+      "name": "A. WHAT TO PRESERVE (Image-to-Image / Nano Banana)",
+      "options": [
+        "Preserve existing massing, proportions, and camera angle",
+        "Maintain original building geometry and fenestration rhythm",
+        "Keep all volumes, roof forms, and structural expression unchanged",
+        "Preserve camera position, horizon line, and field of view",
+        "Do not alter scale, setbacks, or overall composition",
+        "Maintain existing spatial layout and circulation",
+        "Preserve sectional relationships and floor-to-floor heights",
+        "Keep original facade articulation and opening sizes",
+        "Maintain existing context placement and orientation",
+        "Preserve all architectural intent shown in the reference image"
+      ]
+    },
+    {
+      "id": "desc",
+      "name": "B. ARCHITECTURAL DESCRIPTION",
+      "options": [
+        "Mid-rise academic building organized around a central courtyard",
+        "Urban residential infill building with ground-floor retail",
+        "Institutional building composed of stepped volumes",
+        "Linear bar building framing a landscaped open space",
+        "Public cultural building with a prominent civic entry",
+        "Low-rise residential housing organized around shared courtyards",
+        "Healthcare facility with a clear and legible entry sequence",
+        "Workplace building with flexible floor plates and shared amenities",
+        "Adaptive reuse of an existing industrial structure",
+        "Civic building with transparent ground floor and solid upper volumes"
+      ]
+    },
+    {
+      "id": "material",
+      "name": "C. MATERIAL REFINEMENT",
+      "options": [
+        "Light brick masonry with deep punched openings",
+        "Board-formed concrete with subtle texture and tie holes",
+        "Clear low-iron glass with realistic reflections",
+        "Bronze anodized aluminum window frames",
+        "Exposed structural concrete with smooth finish",
+        "Warm wood cladding with visible grain",
+        "Precast concrete panels with consistent joints",
+        "Metal panel facade with matte finish",
+        "Stone cladding with refined detailing",
+        "Combination of masonry base and lightweight upper facade"
+      ]
+    },
+    {
+      "id": "light",
+      "name": "D. LIGHTING + ATMOSPHERE",
+      "options": [
+        "Soft overcast daylight with diffuse shadows",
+        "Early morning light with long, soft shadows",
+        "Late afternoon golden-hour light with warm highlights",
+        "Neutral daylight with balanced exposure",
+        "Bright but calm morning light",
+        "Even interior daylight supplemented by warm artificial lighting",
+        "Subtle atmospheric depth with gentle contrast",
+        "Clear daylight with crisp but controlled shadows",
+        "Interior evening lighting glowing through windows",
+        "Low-contrast lighting emphasizing material texture"
+      ]
+    },
+    {
+      "id": "context",
+      "name": "E. CONTEXT CUES",
+      "options": [
+        "Urban campus context with mature trees and pathways",
+        "Dense urban street with neighboring masonry buildings",
+        "Suburban setting with landscaped planting",
+        "Civic plaza with open paved surfaces",
+        "Minimal context with background buildings receding",
+        "Courtyard landscape with planting and seating",
+        "Urban neighborhood with restrained street activity",
+        "Industrial context with large-scale surroundings",
+        "Interior context with adjacent program spaces visible",
+        "Neutral background context to emphasize the building"
+      ]
+    },
+    {
+      "id": "negative",
+      "name": "F. QUALITY CONTROL / NEGATIVE INSTRUCTIONS",
+      "options": [
+        "No distorted geometry or warped surfaces",
+        "No exaggerated perspective or fisheye effect",
+        "No oversaturated colors or heavy contrast",
+        "No surreal or fantasy elements",
+        "No cartoon or illustrative style",
+        "Realistic scale and accurate proportions",
+        "Clean geometry with precise edges",
+        "Natural material behavior and reflections",
+        "Restrained entourage with realistic people",
+        "Professional architectural visualization quality"
+      ]
+    }
+  ]
+}

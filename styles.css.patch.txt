@@ -1,0 +1,22 @@
+/* Prompt Mixer v3.1 tweaks */
+
+/* Summary moved above outputs; buttons sit in the bottom-right corner (outside the textarea). */
+.summaryWrap { position: relative; }
+.summaryArea { min-height: 220px; padding-bottom: 56px; }
+.summaryCornerActions {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Light mode: remove any filled background behind the banana logo */
+[data-theme="light"] .logo { background: transparent !important; }
+
+/* Small screens: let actions flow below */
+@media (max-width: 900px) {
+  .summaryCornerActions { position: static; margin-top: 10px; }
+  .summaryArea { padding-bottom: 14px; }
+}

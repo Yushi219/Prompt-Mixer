@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prompt Mixer</title>
+  <meta name="description" content="Prompt Mixer — an architectural AIGC prompt picker/editor." />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍌</text></svg>">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topLeft"></div>
+
+    <div class="brand" aria-label="Prompt Mixer">
+      <div class="logo" aria-hidden="true">🍌</div>
+      <div class="brandTitle">Prompt Mixer</div>
+    </div>
+
+    <div class="topActions">
+      <button class="btn btnGhost" id="btnTheme" title="Toggle light/dark">Light</button>
+      <button class="btn" id="btnHistory">History</button>
+      <button class="btn btnGhost" id="btnResetDefaults" title="Reset categories & options to defaults (history untouched)">Reset</button>
+    </div>
+  </header>
+
+  <main class="split" id="split">
+    <section class="col left" id="leftCol">
+      <div class="colHeader">
+        <div class="colTitle">Pick options</div>
+        <div class="colActions">
+          <button class="btn" id="btnAddCategory">+ Category</button>
+        </div>
+      </div>
+      <div id="categories" class="scrollArea"></div>
+    </section>
+
+    <div class="dragbar" id="dragbar" title="Drag to resize"></div>
+
+    <section class="col right" id="rightCol">
+      <div class="colHeader">
+        <div class="colTitle">Outputs</div>
+      </div>
+
+      <!-- Summary sits directly under the divider for quick copy/save -->
+      <div class="summaryBlock">
+        <div class="summaryTitle">Summary</div>
+
+        <div class="summaryWrap">
+          <textarea id="summary" class="textarea summaryArea" rows="12" readonly></textarea>
+
+          <div class="summaryCornerActions">
+            <button class="btn" id="btnCopySummary">Copy</button>
+            <button class="btn btnPrimary" id="btnSave" title="Save current summary to today’s history">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="outputs" class="scrollArea outputsArea"></div>
+    </section>
+  </main>
+
+  <!-- Bulk editor modal -->
+  <div class="modalOverlay hidden" id="modalOverlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modalHeader">
+        <div class="modalTitle">Edit category</div>
+        <button class="iconBtn" id="modalClose" title="Close">✕</button>
+      </div>
+
+      <div class="modalBody">
+        <label class="field">
+          <div class="fieldLabel">Category name</div>
+          <input id="modalCategoryName" class="input" />
+        </label>
+
+        <label class="field">
+          <div class="fieldLabel">Options (one per line)</div>
+          <textarea id="modalLines" class="textarea" rows="14" placeholder="One option per line."></textarea>
+        </label>
+      </div>
+
+      <div class="modalFooter">
+        <button class="btn btnGhost danger" id="modalDeleteCategory">Delete category</button>
+        <div class="spacer"></div>
+        <button class="btn" id="modalCancel">Cancel</button>
+        <button class="btn btnPrimary" id="modalSave">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- History modal -->
+  <div class="modalOverlay hidden" id="historyOverlay" role="dialog" aria-modal="true">
+    <div class="modal modalWide">
+      <div class="modalHeader">
+        <div class="modalTitle">Today’s History</div>
+        <button class="iconBtn" id="historyClose" title="Close">✕</button>
+      </div>
+
+      <div class="modalBody">
+        <div class="historyTop">
+          <div class="tinyHint" id="historyDateHint"></div>
+          <div class="historyActions">
+            <button class="btn" id="btnDownloadHistory">Download (.txt)</button>
+            <button class="btn btnGhost" id="btnClearHistory">Clear today</button>
+          </div>
+        </div>
+        <div id="historyList" class="historyList"></div>
+      </div>
+
+      <div class="modalFooter">
+        <div class="tinyHint">History only keeps items for the current local day. Older days auto-clear.</div>
+        <div class="spacer"></div>
+        <button class="btn btnPrimary" id="historyOk">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
