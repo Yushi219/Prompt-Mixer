@@ -253,7 +253,7 @@ html[data-theme="light"] .logo{
   gap:12px;
   margin-bottom:10px;
 }
-.summaryTitle{font-weight:550}
+.summaryTitle{font-weight:950}
 
 /* Floating Save */
 .saveFab{
@@ -340,5 +340,3 @@ html[data-theme="light"] .modalOverlay{background:rgba(0,0,0,.40)}
 .scrollArea::-webkit-scrollbar{width:10px}
 .scrollArea::-webkit-scrollbar-thumb{background:color-mix(in srgb, var(--text) 14%, transparent); border-radius:10px}
 .scrollArea::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb, var(--text) 20%, transparent)}
-
-
