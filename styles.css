@@ -253,7 +253,7 @@ html[data-theme="light"] .logo{
   gap:12px;
   margin-bottom:10px;
 }
-.summaryTitle{font-weight:950}
+.summaryTitle{font-weight:550}
 
 /* Floating Save */
 .saveFab{
@@ -342,49 +342,4 @@ html[data-theme="light"] .modalOverlay{background:rgba(0,0,0,.40)}
 .scrollArea::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb, var(--text) 20%, transparent)}
 
 
-/* Right column becomes a vertical layout: outputs on top, summary takes remaining height */
-#rightCol {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 72px); /* 72px roughly your header height; adjust if needed */
-  min-height: 0;
-}
 
-/* Outputs should NOT scroll as a whole */
-.outputsArea {
-  flex: 0 0 auto;
-  overflow: visible; /* no scrollbar here */
-}
-
-/* Summary sits at bottom and fills remaining vertical space */
-.summaryBottom {
-  flex: 1 1 auto;
-  min-height: 0;
-  margin-top: 14px;
-}
-
-/* Summary textarea scrolls internally when too long */
-.summaryWrap {
-  position: relative;
-  height: 100%;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.summaryArea {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: auto;          /* inner scrollbar */
-  resize: none;            /* optional: prevent user resizing breaking layout */
-  padding-bottom: 56px;    /* leave room for Copy/Save overlay */
-}
-
-/* Keep Copy/Save bottom-right inside the Summary box */
-.summaryCornerActions {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-  display: flex;
-  gap: 10px;
-}
